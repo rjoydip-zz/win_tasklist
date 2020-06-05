@@ -17,7 +17,7 @@ deno install --allow-run -f --name tasklist "deno.land/x/win_tasklist/cli.ts"
 ## Usage
 
 ```ts
-import { tasklist } from "deno.land/x/win_tasklist/cli.ts";
+import { tasklist } from "deno.land/x/win_tasklist/mod.ts";
 
 (async () => {
   console.log(await tasklist());
@@ -55,7 +55,7 @@ Options are the same as the Promise interface.
 **Example using stream interface**
 
 ```ts
-import { tasklist } from "deno.land/x/win_tasklist/cli.ts";
+import { tasklist } from "deno.land/x/win_tasklist/mod.ts";
 
 tasklist.stream({ verbose: true }).pipe(process.stdout);
 /*
@@ -111,7 +111,7 @@ With the `verbose` option set to `true` but the `apps` option still set to `fals
 **Verbose example:**
 
 ```ts
-import { tasklist } from "deno.land/x/win_tasklist/cli.ts";
+import { tasklist } from "deno.land/x/win_tasklist/mod.ts";
 
 (async () => {
   console.log(await tasklist({ verbose: true }));
@@ -176,7 +176,7 @@ Without the `verbose` option, the command returns the following data:
 **Example:**
 
 ```ts
-import { tasklist } from "deno.land/x/win_tasklist/cli.ts";
+import { tasklist } from "deno.land/x/win_tasklist/mod.ts";
 
 (async () => {
   console.log(await tasklist({ apps: true }));
@@ -208,7 +208,7 @@ With the `verbose` option set to `true`, the command additionally returns the fo
 **Verbose example:**
 
 ```ts
-import { tasklist } from "deno.land/x/win_tasklist/cli.ts";
+import { tasklist } from "deno.land/x/win_tasklist/mod.ts";
 
 (async () => {
   console.log(await tasklist({ apps: true, verbose: true }));
@@ -243,7 +243,7 @@ List all tasks using the given DLL module name. If an empty string is given, it 
 **Example:**
 
 ```ts
-import { tasklist } from "deno.land/x/win_tasklist/cli.ts";
+import { tasklist } from "deno.land/x/win_tasklist/mod.ts";
 
 (async () => {
   console.log(await tasklist({ modules: "wmiutils.dll" }));
@@ -267,7 +267,7 @@ Displays services hosted in each process.
 **Example:**
 
 ```ts
-import { tasklist } from "deno.land/x/win_tasklist/cli.ts";
+import { tasklist } from "deno.land/x/win_tasklist/mod.ts";
 
 (async () => {
   console.log(await tasklist({ services: true }));
